@@ -13,44 +13,42 @@
  *
  * Written as a declaration — the `function greet(...)` form.
  *
+ 
+/**
  * @param {string} name
  * @returns {string}
  */
 export function greet(name) {
-  // TODO: return a template literal.
-  throw new Error("greet is not written yet");
+  return `Hello, ${name}!`;
 }
 
 /**
  * Doubles a number.
  * double(21) -> 42
  *
- * Written as an ARROW function. Try it without braces, so the expression is
- * returned automatically.
- *
  * @param {number} n
  * @returns {number}
  */
-export const double = (n) => {
-  // TODO: replace this whole body. Keep `export const double =`.
-  throw new Error("double is not written yet");
-};
+export const double = (n) => n * 2;
 
 /**
  * Takes a percentage off a price.
- * applyDiscount(320, 25) -> 240
- * applyDiscount(200, 10) -> 180
- *
- * Written as an ARROW function, with two parameters.
- *
- * @param {number} amount in EGP
- * @param {number} percent for example 25 for 25% off
- * @returns {number} the price after the discount
+ * @param {number} amount
+ * @param {number} percent
+ * @returns {number}
  */
 export const applyDiscount = (amount, percent) => {
-  // TODO: subtract the percentage from the amount.
-  throw new Error("applyDiscount is not written yet");
+  return amount - (amount * percent / 100);
 };
+
+export function formatPrice(amount, currency = "EGP") {
+  return `${amount} ${currency}`;
+}
+
+
+export function applyTwice(fn, value) {
+  return fn(fn(value));
+}
 
 /**
  * Now you write the whole function. Nothing is started for you below this
